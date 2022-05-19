@@ -1,1 +1,31 @@
+body{
+  background-color: deepskyblue
+}
+.cardsElements{
+  height: 50vh;
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+  .cards{
+    background-color: orange;
+    border-color: orange;
+  }
+}
+
+.buttonsPlayReset{
+  height: 50vh;
+display: flex;
+  align-items: center;
+  justify-content: center;
+  .buttonsPR{
+    background-color: greenyellow;
+    border-color: greenyellow;
+    margin:15px;
+  }
+}
+
+button{
+  height: 50px;
+  width: 100px;
+}
