@@ -28,7 +28,10 @@ MY START:
 - create 5 buttons in HTML
 - connect buttons with choiceUser
 - make if-statements who wins
-- 
+- create computerChoise Button and connect
+- create reset button + make active
+
+
 ## Must-have features
 - Have 5 buttons that the player can press to change their pick
 - Have another button to let the computer pick one and show the winner
