@@ -13,13 +13,22 @@ body {
   border-color: orange;
 }
 
-.buttonsPlayReset {
-  height: 50vh;
+.computer {
+  height: 30vh;
+}
+.computer .text {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: blue;
 }
-.buttonsPlayReset .buttonsPR {
+
+.buttonsCompReset {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.buttonsCompReset .buttonsPR {
   background-color: greenyellow;
   border-color: greenyellow;
   margin: 15px;

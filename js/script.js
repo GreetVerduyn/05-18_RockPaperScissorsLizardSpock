@@ -12,6 +12,9 @@ let choiceButtons = document.getElementsByClassName("cards");
 for (let i = 0; i < choiceButtons.length; i++) {
     choiceButtons[i].addEventListener("click", function () {
         userChoice = choiceButtons[i].id;
+        document.getElementById("choices").innerHTML=`${userChoice}`
+
+
         computerChoice=undefined;
     })
 };
@@ -54,4 +57,5 @@ resetButton.addEventListener("click", function () {
     userChoice=undefined;
     textResults.innerHTML = ""
     document.getElementById("text").innerHTML = ""
+    document.getElementById("choices").innerHTML=""
 });

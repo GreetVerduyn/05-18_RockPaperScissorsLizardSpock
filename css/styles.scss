@@ -13,17 +13,31 @@ body{
   }
 }
 
-.buttonsPlayReset{
-  height: 50vh;
-display: flex;
+.computer{
+  height: 30vh;
+
+
+  .text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: blue;
+  }
+}
+
+.buttonsCompReset{
+  display: flex;
+  align-content: center;
   align-items: center;
-  justify-content: center;
+
   .buttonsPR{
     background-color: greenyellow;
     border-color: greenyellow;
     margin:15px;
   }
 }
+
+
 
 button{
   height: 50px;
