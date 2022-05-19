@@ -16,7 +16,7 @@ body {
 .computer {
   height: 30vh;
 }
-.computer .text {
+.computer #text {
   display: flex;
   align-items: center;
   justify-content: center;

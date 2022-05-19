@@ -22,7 +22,7 @@ Make a Rock paper scissors lizard Spock. Based on the original game "Rock Paper 
 - Spock vaporizes Rock
 - Rock crushes Scissors
 
-MY START:
+MY CODING:
 - create an array wit the 5 elements in Javascript
 - make random {choice for computer
 - create 5 buttons in HTML
@@ -33,6 +33,13 @@ MY START:
   => if userChoise is undefined= undifined -> return //empty
 - create reset button(play again) + make it active
 - create text in HTML by get element <h1>
+- styling
+
+IMPROVEMENTS TO DO:
+- when made choice, other buttons not usable
+- lay out
+
+
 
 
 ## Nice-to-have features
