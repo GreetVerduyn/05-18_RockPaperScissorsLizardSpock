@@ -30,6 +30,7 @@ MY START:
 - make if-statements who wins
 - create computerChoise Button and connect
 - create reset button + make active
+- create text in HTML by get element <h1>
 
 
 ## Must-have features

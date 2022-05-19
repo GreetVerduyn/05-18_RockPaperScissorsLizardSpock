@@ -1,68 +1,74 @@
 const elements = ["scissors", "paper", "rock", "lizard", "spock"];
-let user;
-let computer;
-let userWins = false;
+let userPoints=0;
+let computerPoints=0;
+let userWins=false
 let userChoice;
 let computerChoice
-let resetButton=document.getElementById("reset")
-
+let resetButton = document.getElementById("reset")
+let textResults = document.getElementById("result")
 
 
 let choiceButtons = document.getElementsByClassName("cards");
-console.log(choiceButtons);
+//console.log(choiceButtons);
 
 for (let i = 0; i < choiceButtons.length; i++) {
-    choiceButtons[i].addEventListener("click", function ()
-    {
+    choiceButtons[i].addEventListener("click", function () {
         userChoice = choiceButtons[i].id;
-        //console.log(userChoice);
+        computerChoice=undefined;
+        console.log(`choice user ${userChoice} the computer chose ${computerChoice}`);
+
     })
-};
+}
+;
+
+function play (userChoice, computerChoice) {
+    console.log(userChoice)
+    console.log(computerChoice)
+
+    if (userChoice === undefined) return
+
+    if (computerChoice === userChoice) {
+        textResults.innerHTML = "Same cards, try again.";
+    } else if (userChoice === "lizard" && (computerChoice === "paper" || computerChoice ==="spock")) {
+        userWins = true
+        textResults.innerHTML = "you win"
+    } else if (userChoice === "scissors" && (computerChoice === "paper" || computerChoice ==="lizard")) {
+        userWins = true
+        textResults.innerHTML = "you win"
+    } else if (userChoice === "rock" && (computerChoice === "lizard" || computerChoice ==="scissors")) {
+        userWins = true
+        textResults.innerHTML = "you win"
+    } else if (userChoice === "spock" && (computerChoice === "scissors" || computerChoice ==="rock")) {
+        userWins = true
+        textResults.innerHTML = "you win"
+    } else if (userChoice === "paper" && (computerChoice === "spock" || computerChoice ==="rock")) {
+        userWins = true
+        textResults.innerHTML = "you win"
+    } else {
+        userWins = false
+        textResults.innerHTML = "you lose"
+    }
+
+  /*  if (userWins === true) {
+        textResults.innerHTML = "you win"
+    } else if (userWins === false) {
+        textResults.innerHTML = "you lose"
+    }*/
+}
 
 
 document.getElementById("computerButton").addEventListener("click", function () {
     computerChoice = elements[Math.floor(Math.random() * elements.length)];
-    //console.log(computerChoice)
+play(userChoice, computerChoice)
+    //console.log(`choice computer ${computerChoice}`);
 
-    if (computerChoice === userChoice) {
-        document.getElementById("text").innerHTML = `Same cards, try again.`;
-    } else {
-        if (userChoice === 'lizard' && (computerChoice === 'paper' || 'spock')) {
-            userWins = true
-        } else {
-            userWins = false
-        }
-        if (userChoice === 'scissors' && (computerChoice === 'paper' || 'lizard')) {
-            userWins = true
-        } else {
-            userWins = false
-        }
-        if (userChoice === 'rock' && (computerChoice === 'lizard' || 'scissors')) {
-            userWins = true
-        } else {
-            userWins = false
-        }
-        if (userChoice === 'spock' && (computerChoice === 'scissors' || 'rock')) {
-            userWins = true
-        } else {
-            userWins = false
-        }
-        if (userChoice === 'paper' && (computerChoice === 'spock' || 'rock')) {
-            userWins = true
-        } else {
-            userWins = false
-        }
-    }
-if (userWins= true){
 
-    }
 })
 
 
-
-
-
-
-resetButton.addEventListener("click",function(){
-    userWins=false
+resetButton.addEventListener("click", function () {
+    userWins = false
+    userChoice=undefined;
+    textResults.innerHTML = ""
+    document.getElementById("text").innerHTML = ""
 })
