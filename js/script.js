@@ -12,11 +12,13 @@ let choiceButtons = document.getElementsByClassName("cards");
 for (let i = 0; i < choiceButtons.length; i++) {
     choiceButtons[i].addEventListener("click", function () {
         userChoice = choiceButtons[i].id;
-        document.getElementById("choicesUser").innerHTML = `${userChoice}`
+        document.getElementById("choicesUser").innerText = `${userChoice}`
         computerChoice = undefined;
     })
 }
-;
+
+document.getElementById("pointsUser").innerText = `User: ${userPoints}`
+document.getElementById("pointsComputer").innerText = `Computer: ${userPoints}`
 
 
 function play(userChoice, computerChoice) {
@@ -24,40 +26,46 @@ function play(userChoice, computerChoice) {
     if (userChoice === undefined) return
 
     if (computerChoice === userChoice) {
-        textResults.innerHTML = "Same cards, try again.";
+        textResults.innerText = "Same cards, try again.";
     } else if (userChoice === "lizard" && (computerChoice === "paper" || computerChoice === "spock")) {
         userWins = true
-        textResults.innerHTML = "you win"
+        textResults.innerText = "you win"
+        userPoints = userPoints + 1
     } else if (userChoice === "scissors" && (computerChoice === "paper" || computerChoice === "lizard")) {
         userWins = true
-        textResults.innerHTML = "you win"
+        textResults.innerText = "you win"
+        userPoints = userPoints + 1
     } else if (userChoice === "rock" && (computerChoice === "lizard" || computerChoice === "scissors")) {
         userWins = true
-        textResults.innerHTML = "you win"
+        textResults.innerText = "you win"
+        userPoints = userPoints + 1
     } else if (userChoice === "spock" && (computerChoice === "scissors" || computerChoice === "rock")) {
         userWins = true
-        textResults.innerHTML = "you win"
+        textResults.innerText = "you win"
+        userPoints = userPoints + 1
     } else if (userChoice === "paper" && (computerChoice === "spock" || computerChoice === "rock")) {
         userWins = true
-        textResults.innerHTML = "you win"
+        textResults.innerText = "you win"
+        userPoints = userPoints + 1
     } else {
         userWins = false
-        textResults.innerHTML = "you lose"
+        textResults.innerText = "you lose"
+        computerPoints = computerPoints + 1
     }
 };
 
 document.getElementById("computerButton").addEventListener("click", function () {
     computerChoice = elements[Math.floor(Math.random() * elements.length)];
     play(userChoice, computerChoice)
-    document.getElementById("choicesComputer").innerHTML = `${computerChoice}`
+    document.getElementById("choicesComputer").innerText = `${computerChoice}`
 
 });
 
 resetButton.addEventListener("click", function () {
     userWins = false
     userChoice = undefined;
-    textResults.innerHTML = ""
-    document.getElementById("text").innerHTML = " ";
-    document.getElementById("choicesUser").innerHTML = " ";
-    document.getElementById("choicesComputer").innerHTML = " ";
+    textResults.innerText = ""
+    document.getElementById("text").innerText = " ";
+    document.getElementById("choicesUser").innerText = " ";
+    document.getElementById("choicesComputer").innerText = " ";
 });

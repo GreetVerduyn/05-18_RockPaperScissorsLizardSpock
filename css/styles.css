@@ -13,6 +13,12 @@ body {
   border-color: orange;
 }
 
+.points {
+  display: flex;
+  justify-content: space-evenly;
+  color: blue;
+}
+
 .computer {
   height: 30vh;
 }

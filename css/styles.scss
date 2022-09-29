@@ -3,7 +3,7 @@ body{
 }
 .cardsElements{
   height: 50vh;
- display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 
@@ -11,6 +11,12 @@ body{
     background-color: orange;
     border-color: orange;
   }
+}
+
+.points{
+display: flex;
+  justify-content: space-evenly;
+  color: blue;
 }
 
 .computer{
