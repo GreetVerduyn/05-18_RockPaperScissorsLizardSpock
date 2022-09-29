@@ -6,6 +6,8 @@ let userChoice;
 let computerChoice;
 let resetButton = document.getElementById("reset");
 let textResults = document.getElementById("text");
+let pointsUser = document.getElementById("pointsUser");
+let pointsComputer = document.getElementById("pointsComputer");
 
 let choiceButtons = document.getElementsByClassName("cards");
 
@@ -31,26 +33,32 @@ function play(userChoice, computerChoice) {
         userWins = true
         textResults.innerText = "you win"
         userPoints = userPoints + 1
+        pointsUser.innerText = `user: ${userPoints}`
     } else if (userChoice === "scissors" && (computerChoice === "paper" || computerChoice === "lizard")) {
         userWins = true
         textResults.innerText = "you win"
         userPoints = userPoints + 1
+        pointsUser.innerText = `user: ${userPoints}`
     } else if (userChoice === "rock" && (computerChoice === "lizard" || computerChoice === "scissors")) {
         userWins = true
         textResults.innerText = "you win"
         userPoints = userPoints + 1
+        pointsUser.innerText = `user: ${userPoints}`
     } else if (userChoice === "spock" && (computerChoice === "scissors" || computerChoice === "rock")) {
         userWins = true
         textResults.innerText = "you win"
         userPoints = userPoints + 1
+        pointsUser.innerText = `user: ${userPoints}`
     } else if (userChoice === "paper" && (computerChoice === "spock" || computerChoice === "rock")) {
         userWins = true
         textResults.innerText = "you win"
         userPoints = userPoints + 1
+        pointsUser.innerText = `user: ${userPoints}`
     } else {
         userWins = false
         textResults.innerText = "you lose"
         computerPoints = computerPoints + 1
+        pointsComputer.innerText = `computer:${computerPoints}`
     }
 };
 
